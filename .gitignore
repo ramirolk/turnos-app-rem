@@ -1,0 +1,23 @@
+# Dependencias y paquetes (Si usamos composer más adelante)
+/vendor/
+/node_modules/
+
+# Variables de entorno y configuración local
+.env
+.env.local
+config/local.php
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs y editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+/logs/
