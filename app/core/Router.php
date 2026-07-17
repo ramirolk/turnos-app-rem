@@ -52,7 +52,17 @@ class Router{
             return;
         }
 
+        if(isset($route['middleware'])){
 
+            foreach($route['middleware'] as $middleware){
+
+            $middlewareInstance = new $middleware();
+
+            $middlewareInstance->handle();
+
+            }
+        }
+        
         $controllerInstance = new $controller();
 
 
