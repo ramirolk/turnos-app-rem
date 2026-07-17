@@ -1,6 +1,18 @@
 <?php
-// Cuando avancemos en el proyecto se definen las rutas en este archivo
+return [
 
-// Ejemplo futuro (Gracias Claude):
-// GET  /             -> HomeController::index
-// POST /turno/reservar -> TurnoController::reservar
+    'GET' => [
+
+        '/' => ['HomeController', 'index'],
+
+        '/login' => ['AuthController', 'showLogin']
+
+    ],
+
+    'POST' => [
+
+        '/login' => ['AuthController', 'login']
+
+    ]
+];
+?>
