@@ -1,17 +1,14 @@
 <?php
+
+use app\controllers\HomeController;
 return [
 
-    'GET' => [
+    "GET" => [
 
-        '/' => ['HomeController', 'index'],
-
-        '/login' => ['AuthController', 'showLogin']
-
-    ],
-
-    'POST' => [
-
-        '/login' => ['AuthController', 'login']
+        "/" => [
+            "controller" => HomeController::class,
+            "action" => "index"
+        ]
 
     ]
 ];

@@ -18,6 +18,13 @@ class Router{
             echo "404 - Ruta no encontrada";
             return;
         }
+        
+        $controller = new $route['controller']();
+
+        call_user_func([
+            $controller,
+            $route['action']
+        ]);
     }
 }
 ?>

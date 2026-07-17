@@ -6,6 +6,8 @@ require_once __DIR__ . '/../config/database.php';
 // Require para cargar las rutas
 $routes = require_once __DIR__ . '/../routes/web.php';
 
+require_once __DIR__ . '/../app/controllers/HomeController.php';
+
 require_once __DIR__ . '/../app/core/Router.php';
 
 $router = new Router($routes);
