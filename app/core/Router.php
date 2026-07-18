@@ -1,4 +1,8 @@
 <?php
+// Gestiona el enrutamiento de peticiones PHP
+// Se encarga de resolver la petición HTTP actual, ejecutar los middleware asociados 
+// y delegar la ejecución al controlador correspondiente.
+
 
 class Router{
     private array $routes;
@@ -6,6 +10,14 @@ class Router{
     public function __construct(array $routes){
         $this->routes = $routes;
     }
+
+
+//  Procesa la petición actual:
+//  Obtiene método HTTP y URI.
+//  Busca la ruta configurada.
+//  Ejecuta middleware asociados.
+//  Ejecuta el controlador y acción correspondiente.
+ 
 
     public function dispatch(){
         $method = $_SERVER['REQUEST_METHOD'];
@@ -62,7 +74,7 @@ class Router{
 
             }
         }
-        
+
         $controllerInstance = new $controller();
 
 

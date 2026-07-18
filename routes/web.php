@@ -1,5 +1,12 @@
 <?php
 
+//  Definición de rutas de la aplicación.
+ 
+//  Cada ruta contiene:
+//   - controller: clase encargada de procesar la petición.
+//   - action: método que será ejecutado.
+//   - middleware: capas opcionales que se ejecutan antes.
+
 use app\controllers\HomeController;
 use app\middleware\AuthMiddleware;
 

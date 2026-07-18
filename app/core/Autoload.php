@@ -1,5 +1,13 @@
 <?php
 
+//  Autoload personalizado basado en namespaces.
+
+//  Convierte namespaces, como por ejemplo:
+//  app\controllers\HomeController
+//  en rutas de archivos:
+//  app/controllers/HomeController.php
+
+
 spl_autoload_register(function ($class) {
 
     $path = str_replace('\\', '/', $class);
