@@ -20,16 +20,25 @@ class Router{
  
 
     public function dispatch(){
+        
         $method = $_SERVER['REQUEST_METHOD'];
 
-        $uri = parse_url(
-            $_SERVER['REQUEST_URI'],
-            PHP_URL_PATH
-        );
+        $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+        // Normalizamos la URI para eliminar el path base del proyecto.
+        // Permite que el Router funcione independientemente de la configuración del entorno.
+        
+        $basePath = dirname($_SERVER['SCRIPT_NAME']);
+
+        if ($basePath !== '/') {
+            $uri = str_replace($basePath, '', $uri);
+        }
+
+        // Garantiza que todas las rutas tengan el formato "/ruta"
+        $uri = '/' . trim($uri, '/');
         $route = $this->routes[$method][$uri] ?? null;
 
-
+        
         if (!$route) {
 
             http_response_code(404);
