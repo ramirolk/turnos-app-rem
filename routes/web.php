@@ -8,6 +8,7 @@
 //   - middleware: capas opcionales que se ejecutan antes.
 
 use app\controllers\HomeController;
+use app\controllers\AuthController;
 use app\middleware\AuthMiddleware;
 
 return [
@@ -20,6 +21,11 @@ return [
             "middleware" => [
                 AuthMiddleware::class
             ]
+        ],
+
+        "/login" => [
+            "controller" => AuthController::class,
+            "action" => "index"
         ]
 
     ]

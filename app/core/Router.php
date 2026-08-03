@@ -27,7 +27,6 @@ class Router{
             PHP_URL_PATH
         );
 
-
         $route = $this->routes[$method][$uri] ?? null;
 
 
