@@ -31,6 +31,13 @@ return [
             "controller" => AuthController::class,
             "action" => "shoWRegisterForm"
         ]
+    ],
+
+    "POST" => [
+        "/register" => [
+            "controller" => AuthController::class,
+            "action" => "register"
+        ]
     ]
 ];
 ?>

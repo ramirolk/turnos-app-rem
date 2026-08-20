@@ -9,7 +9,7 @@
 
     <h1>Registro</h1>
 
-    <form action="registro" method="POST">
+    <form action="register" method="POST">
 
         <div>
             <label for="name">Nombre</label><br>
@@ -18,7 +18,7 @@
                 id="name"
                 name="name"
                 required
-            >
+            > 
         </div>
 
         <div>
