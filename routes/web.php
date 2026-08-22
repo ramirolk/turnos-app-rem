@@ -25,9 +25,19 @@ return [
 
         "/login" => [
             "controller" => AuthController::class,
-            "action" => "index"
+            "action" => "showLoginForm"
+        ],
+        "/register" => [
+            "controller" => AuthController::class,
+            "action" => "shoWRegisterForm"
         ]
+    ],
 
+    "POST" => [
+        "/register" => [
+            "controller" => AuthController::class,
+            "action" => "register"
+        ]
     ]
 ];
 ?>
