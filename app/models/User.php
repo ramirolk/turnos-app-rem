@@ -34,15 +34,15 @@ class User{
 
     // Setters
 
-    public function setName(string $name):string {
+    public function setName(string $name): void{
         $this->name = $name;
     }
 
-    public function setEmail(string $email):string {
+    public function setEmail(string $email): void{
         $this->email = $email;
     }
 
-    public function setPassword(string $password):string {
+    public function setPassword(string $password): void{
         $this->password = $password;
     }
 

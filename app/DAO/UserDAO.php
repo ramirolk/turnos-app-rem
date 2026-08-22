@@ -5,7 +5,7 @@ use app\models\User;
 
 class UserDAO{
     
-    public function create(User $user): bool{
+    public function create(User $user): void{
         $conn = \Database::getConnection();
 
         $sql = "INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)";
