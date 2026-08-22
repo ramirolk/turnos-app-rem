@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Require para cargar la configuración de la DB
 require_once __DIR__ . '/../config/database.php';
