@@ -38,6 +38,37 @@ class AuthController{
         header("Location: login");
         exit;
     }
+
+    public function login(): void{
+        $email = trim($_POST['email']?? "");
+        $password = trim($_POST['password']?? "");
+
+        if (empty($email) || empty($password)){
+            die ("Todos los campos son obligatorios");
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            die ("Correo no valido");
+        }
+
+        $user = $this->UserDAO->searchByEmail($email);
+
+        if ($user == NULL){
+            die("Correo o contraseña incorrecto"); 
+        }
+
+        if (!password_verify($password, $user->getPassword())){
+            die ("Correo o contraseña incorrecto");
+        }
+
+        $_SESSION["user_id"] = $user->getId();
+        $_SESSION["user_name"] = $user->getName();
+        $_SESSION["user_email"] = $user->getEmail();
+
+        die ("BIENVENIDO");
+        exit;
+    }
+
 // Vistas de la pagina de registro y de login (GET)
     public function showLoginForm()
     {

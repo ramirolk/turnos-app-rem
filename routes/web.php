@@ -37,6 +37,10 @@ return [
         "/register" => [
             "controller" => AuthController::class,
             "action" => "register"
+        ],
+        "/login" => [
+            "controller" => AuthController::class,
+            "action" => "login"
         ]
     ]
 ];
