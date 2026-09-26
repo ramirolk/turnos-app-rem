@@ -1,6 +1,6 @@
-# Sistema de Turnos
+# Dashboard de Turnos
 
-Aplicación web para gestión de turnos adaptable a distintos rubros.
+Aplicación web para gestión de turnos adaptable a distintos canales de comunicación.
 
 ## Stack
 
